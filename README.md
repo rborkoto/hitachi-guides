@@ -29,14 +29,6 @@ Use a reference when talking to customer
   - [ ] Java (version 8+)
   - [ ] .NET (.NET Framework 4.5+, .NET Core 2.1+, .NET 5+)
 
-###  Database Monitoring
-- [ ] Confirm database technologies and versions:
-  - [ ] PostgreSQL
-  - [ ] MongoDB
-  - [ ] MS SQL
-  - [ ] MySQL
-  - [ ] IBM DB2 (custom setup required)
-
 ### Log Management
 - [ ] Applications producing structured logs.
 - [ ] Volume of log data (GB/TB per day).
