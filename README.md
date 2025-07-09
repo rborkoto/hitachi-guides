@@ -156,7 +156,5 @@ This checklist contains key items to verify with the customer before initiating 
 - [ ] IaC tools used (Terraform, CloudFormation).
 - [ ] IaC capability for Datadog Agent deployment.
 
-
 ---
 
-Ensure all these points are clearly documented and confirmed with your customer to streamline your Datadog implementation.
