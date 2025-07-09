@@ -91,7 +91,7 @@
 
 # Datadog Customer Checklist
 
-This checklist contains key items to verify with the customer before initiating a Datadog implementation in an AWS environment.
+Use a reference when talking to customer
 
 ---
 
