@@ -1,5 +1,76 @@
 # hitachi-guides
 
+---
+
+# Datadog Customer Checklist
+
+Use a reference when talking to customer
+
+---
+
+##  Checklist
+
+###  AWS Environment
+- [ ] AWS account access with proper IAM permissions.
+- [ ] Network firewall rules/security groups permitting Datadog Agent traffic.
+
+### Datadog Account
+- [ ] Datadog account access.
+- [ ] Datadog API keys available and securely stored.
+
+### Infrastructure Monitoring
+- [ ] Confirm hosts, containers, and Kubernetes clusters.
+- [ ] Confirm operating systems (Linux, Windows).
+
+###  Application Performance Monitoring (APM)
+- [ ] Supported application runtimes:
+  - [ ] Node.js (version 14+)
+  - [ ] Python (FastAPI & Django, version 3.6+)
+  - [ ] Java (version 8+)
+  - [ ] .NET (.NET Framework 4.5+, .NET Core 2.1+, .NET 5+)
+
+###  Database Monitoring
+- [ ] Confirm database technologies and versions:
+  - [ ] PostgreSQL
+  - [ ] MongoDB
+  - [ ] MS SQL
+  - [ ] MySQL
+  - [ ] IBM DB2 (custom setup required)
+
+### Log Management
+- [ ] Applications producing structured logs.
+- [ ] Volume of log data (GB/TB per day).
+- [ ] Data retention policies for logs.
+
+###  Real User Monitoring (RUM)
+- [ ] Confirm front-end tech stacks (Flutter in this case).
+- [ ] Web apps: Ability to inject JavaScript snippet.
+- [ ] Mobile apps: Integration of Datadog’s mobile SDK.
+
+###  Security and Access Management
+- [ ] Single Sign-On (SSO) and MFA requirements.
+- [ ] Define role-based access controls (RBAC).
+- [ ] Audit logging requirements.
+
+###  Tagging and Naming Standards
+- [ ] AWS tagging strategy for consistent filtering in Datadog.
+- [ ] Naming standards for resources and services.
+
+###  Implementation Timeline
+- [ ] Key dates for implementation milestones.
+- [ ] Availability of team members during setup and testing.
+** for later
+
+###  Alerts and Notifications
+- [ ] Notification channels (Slack, Teams, PagerDuty).
+- [ ] Thresholds and key metrics for alerting.
+
+###  Infrastructure as Code (IaC)
+- [ ] IaC tools used (Terraform, CloudFormation).
+- [ ] IaC capability for Datadog Agent deployment.
+
+---
+
 # Datadog Implementation Prerequisites (AWS Environment)
 
 
@@ -87,74 +158,4 @@
 
 - **Note : Make sure you're aligned with the Tagging Strategy:** Consistent tagging for effective monitoring.
 
----
-
-# Datadog Customer Checklist
-
-Use a reference when talking to customer
-
----
-
-##  Checklist
-
-###  AWS Environment
-- [ ] AWS account access with proper IAM permissions.
-- [ ] Network firewall rules/security groups permitting Datadog Agent traffic.
-
-### Datadog Account
-- [ ] Datadog account access.
-- [ ] Datadog API keys available and securely stored.
-
-### Infrastructure Monitoring
-- [ ] Confirm hosts, containers, and Kubernetes clusters.
-- [ ] Confirm operating systems (Linux, Windows).
-
-###  Application Performance Monitoring (APM)
-- [ ] Supported application runtimes:
-  - [ ] Node.js (version 14+)
-  - [ ] Python (FastAPI & Django, version 3.6+)
-  - [ ] Java (version 8+)
-  - [ ] .NET (.NET Framework 4.5+, .NET Core 2.1+, .NET 5+)
-
-###  Database Monitoring
-- [ ] Confirm database technologies and versions:
-  - [ ] PostgreSQL
-  - [ ] MongoDB
-  - [ ] MS SQL
-  - [ ] MySQL
-  - [ ] IBM DB2 (custom setup required)
-
-### Log Management
-- [ ] Applications producing structured logs.
-- [ ] Volume of log data (GB/TB per day).
-- [ ] Data retention policies for logs.
-
-###  Real User Monitoring (RUM)
-- [ ] Confirm front-end tech stacks (Flutter in this case).
-- [ ] Web apps: Ability to inject JavaScript snippet.
-- [ ] Mobile apps: Integration of Datadog’s mobile SDK.
-
-###  Security and Access Management
-- [ ] Single Sign-On (SSO) and MFA requirements.
-- [ ] Define role-based access controls (RBAC).
-- [ ] Audit logging requirements.
-
-###  Tagging and Naming Standards
-- [ ] AWS tagging strategy for consistent filtering in Datadog.
-- [ ] Naming standards for resources and services.
-
-###  Implementation Timeline
-- [ ] Key dates for implementation milestones.
-- [ ] Availability of team members during setup and testing.
-** for later
-
-###  Alerts and Notifications
-- [ ] Notification channels (Slack, Teams, PagerDuty).
-- [ ] Thresholds and key metrics for alerting.
-
-###  Infrastructure as Code (IaC)
-- [ ] IaC tools used (Terraform, CloudFormation).
-- [ ] IaC capability for Datadog Agent deployment.
-
----
 
