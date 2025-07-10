@@ -1,7 +1,5 @@
 # Datadog Flutter RUM Integration Guide
 
-This document provides step-by-step guidance for integrating Datadog Real User Monitoring (RUM) into your Flutter application.
-
 What you need to know before jumping in  :
 
 1. With Flutter, everything is a widget. Widgets are basically user interface components used to create the UI of the application. In Flutter, the application is itself a widget.
