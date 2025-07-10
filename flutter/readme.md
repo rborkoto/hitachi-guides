@@ -105,3 +105,17 @@ For advanced setups, refer to [Datadog RUM Advanced Configuration documentation]
 - [ ] Initialize Datadog RUM in your Flutter application.
 - [ ] Confirm RUM data flow in the Datadog dashboard.
 - [ ] Configure custom attributes and tags.
+
+Q. When would you instrument widgets individually?
+
+Only when you want to capture specific, custom interactions, attributes, or events that are not automatically monitored by Datadog RUM.
+
+eg :
+
+```
+   DatadogSdk.instance.rum?.addUserAction('button_clicked', {
+  'button_name': 'Subscribe',
+});
+```
+
+However, by default, you do not need to instrument each widget. Datadog RUM is designed to automatically cover the majority of your monitoring needs directly from app-level initialization.
