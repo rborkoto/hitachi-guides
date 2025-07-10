@@ -18,12 +18,19 @@ Refer to the [Datadog Account Management documentation](https://docs.datadoghq.c
 
 ---
 
-## Step 2: Add Datadog Flutter SDK 	
+## Step 2: Add Datadog Flutter SDK
 
-Install the Datadog Flutter plugin using this command:
+Declare the Datadog Flutter plugin as a dependency in your `pubspec.yaml` file:
+
+```yaml
+dependencies:
+  datadog_flutter_plugin: x.x.x
+```
+
+Run the following command to install dependencies:
 
 ```shell
-flutter pub add datadog_flutter_plugin
+flutter pub get
 ```
 
 For additional information, refer to the [Datadog Flutter RUM documentation](https://docs.datadoghq.com/real_user_monitoring/flutter/).
@@ -32,7 +39,7 @@ For additional information, refer to the [Datadog Flutter RUM documentation](htt
 
 ## Step 3: Initialize Datadog RUM in Flutter App - Example below (cross check code block with documentation link for any new flags/updates)	
 
-Update your app’s entry point (`lib/main.dart`):
+Initialize the SDK with the application context and start sending data by updating your app’s entry point (`lib/main.dart`):
 
 ```dart
 import 'package:flutter/material.dart';
@@ -43,17 +50,16 @@ Future<void> main() async {
 
   final configuration = DatadogConfiguration(
     clientToken: '<YOUR_DATADOG_CLIENT_TOKEN>',
-    env: 'production', // or 'staging', 'development', etc.
+    env: 'prod', // or 'staging', 'development', etc.
     site: DatadogSite.us1, // Adjust to your Datadog region (us1, eu1, etc.)
-    serviceName: 'your-flutter-app',
-    trackingConsent: TrackingConsent.granted,
     nativeCrashReportEnabled: true,
+    loggingConfiguration: DatadogLoggingConfiguration(),
     rumConfiguration: DatadogRumConfiguration(
       applicationId: '<YOUR_DATADOG_APPLICATION_ID>',
     ),
   );
 
-  await DatadogSdk.runApp(configuration, () async {
+  await DatadogSdk.runApp(configuration, TrackingConsent.granted, () async {
     runApp(MyApp());
   });
 }
@@ -62,6 +68,17 @@ Future<void> main() async {
 Replace:
 - `<YOUR_DATADOG_CLIENT_TOKEN>` with your Client Token.
 - `<YOUR_DATADOG_APPLICATION_ID>` with your Application ID.
+
+If you want to automatically track RUM views using named routes, add `DatadogNavigationObserver` to your `MaterialApp`:
+
+```dart
+MaterialApp(
+  home: HomeScreen(),
+  navigatorObservers: [
+    DatadogNavigationObserver(DatadogSdk.instance),
+  ],
+);
+```
 
 Refer to the [Datadog Flutter RUM documentation](https://docs.datadoghq.com/real_user_monitoring/flutter/) for further details.
 
@@ -91,6 +108,16 @@ For advanced setups, refer to [Datadog RUM Advanced Configuration documentation]
 
 ---
 
+## Note on Platform Support
+Datadog's Flutter SDK supports both iOS and Android. Ensure you have correctly configured your app for both platforms by following platform-specific steps:
+
+- [iOS configuration instructions](https://docs.datadoghq.com/real_user_monitoring/flutter/#ios-setup)
+- [Android configuration instructions](https://docs.datadoghq.com/real_user_monitoring/flutter/#android-setup)
+
+Make sure to validate RUM data from both Android and iOS separately.
+
+---
+
 ## Best Practices
 - Apply consistent tags for environments (dev/stage/prod), application versions, and regions.
 - Follow clear naming conventions for easy identification and filtering of data.
@@ -100,9 +127,10 @@ For advanced setups, refer to [Datadog RUM Advanced Configuration documentation]
 ## Implementation Checklist
 - [ ] Create Datadog RUM application, obtain Client Token and App ID.
 - [ ] Install the Datadog Flutter plugin.
-- [ ] Initialize Datadog RUM in your Flutter application.
+- [ ] Integrated and initialized Datadog RUM in your Flutter application.
 - [ ] Confirm RUM data flow in the Datadog dashboard.
 - [ ] Configure custom attributes and tags.
+
 
 Q. When would you instrument widgets individually?
 
