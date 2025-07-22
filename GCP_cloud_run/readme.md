@@ -5,18 +5,25 @@ Reference these docs for updated commands :
 Doc References :
 
 Datadog Docs References:
+
 Google Cloud Platform (GCP) Integration Setup
 - https://docs.datadoghq.com/integrations/google_cloud_platform/
+
 Google Cloud Run Integration Guide
 - https://docs.datadoghq.com/integrations/google-cloud-run/?tab=nodejs
+
 Serverless Init for Cloud Run (Advanced Instrumentation Sidecar)
 - https://docs.datadoghq.com/serverless/guide/gcr_serverless_init/
+
 Datadog Node.js APM Library
 - https://docs.datadoghq.com/tracing/trace_collection/automatic_instrumentation/dd_libraries/nodejs/
+
 Serverless (Direct Ingestion) Tracing Overview
 - https://docs.datadoghq.com/tracing/serverless/
+
 Log Collection from GCP via Pub/Sub and Dataflow
 - https://docs.datadoghq.com/integrations/google_cloud_platform/?tab=cloudshell#log-collection
+
 Infrastructure Monitoring for GCP
 - https://docs.datadoghq.com/integrations/google_cloud_platform/?tab=cloudshell#metric-collection
 
