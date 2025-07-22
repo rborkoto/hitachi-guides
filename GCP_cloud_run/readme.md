@@ -4,21 +4,21 @@ Reference these docs for updated commands :
 
 Doc References :
 
-Datadog Docs References
-	•	Google Cloud Platform (GCP) Integration Setup
-https://docs.datadoghq.com/integrations/google_cloud_platform/
-	•	Google Cloud Run Integration Guide
-https://docs.datadoghq.com/integrations/google-cloud-run/?tab=nodejs
-	•	Serverless Init for Cloud Run (Advanced Instrumentation Sidecar)
-https://docs.datadoghq.com/serverless/guide/gcr_serverless_init/
-	•	Datadog Node.js APM Library
-https://docs.datadoghq.com/tracing/trace_collection/automatic_instrumentation/dd_libraries/nodejs/
-	•	Serverless (Direct Ingestion) Tracing Overview
-https://docs.datadoghq.com/tracing/serverless/
-	•	Log Collection from GCP via Pub/Sub and Dataflow
-https://docs.datadoghq.com/integrations/google_cloud_platform/?tab=cloudshell#log-collection
-	•	Infrastructure Monitoring for GCP
-https://docs.datadoghq.com/integrations/google_cloud_platform/?tab=cloudshell#metric-collection
+Datadog Docs References:
+Google Cloud Platform (GCP) Integration Setup
+- https://docs.datadoghq.com/integrations/google_cloud_platform/
+Google Cloud Run Integration Guide
+- https://docs.datadoghq.com/integrations/google-cloud-run/?tab=nodejs
+Serverless Init for Cloud Run (Advanced Instrumentation Sidecar)
+- https://docs.datadoghq.com/serverless/guide/gcr_serverless_init/
+Datadog Node.js APM Library
+- https://docs.datadoghq.com/tracing/trace_collection/automatic_instrumentation/dd_libraries/nodejs/
+Serverless (Direct Ingestion) Tracing Overview
+- https://docs.datadoghq.com/tracing/serverless/
+Log Collection from GCP via Pub/Sub and Dataflow
+- https://docs.datadoghq.com/integrations/google_cloud_platform/?tab=cloudshell#log-collection
+Infrastructure Monitoring for GCP
+- https://docs.datadoghq.com/integrations/google_cloud_platform/?tab=cloudshell#metric-collection
 
 A. Cloud Run Metrics & Logs
 
@@ -27,18 +27,18 @@ A. Cloud Run Metrics & Logs
 ```gcloud services enable run.googleapis.com logging.googleapis.com monitoring.googleapis.com```
 
 2. Set Up Google Cloud Integration in Datadog
-	•	Go to Integrations → Google Cloud Platform in Datadog
-	•	Follow official setup steps:
-	•	Create a service account with roles (Monitoring Viewer, Logging Viewer, etc.)
-	•	Grant token-impersonation access to Datadog
-	•	Upload the service account key in Datadog
-	•	Enable Cloud Run in resource collection
-	•	Cloud Run metrics and logs will now appear in Datadog
+- Go to Integrations → Google Cloud Platform in Datadog
+- Follow official setup steps:
+- Create a service account with roles (Monitoring Viewer, Logging Viewer, etc.)
+- Grant token-impersonation access to Datadog
+- Upload the service account key in Datadog
+- Enable Cloud Run in resource collection
+- Cloud Run metrics and logs will now appear in Datadog
 
 3. (Optional) Log Forwarding via Pub/Sub + Dataflow
-	•	Create a Cloud Logging sink and export logs to Pub/Sub
-	•	Deploy the Datadog Dataflow template to stream logs into Datadog
-	•	Datadog Log Collection from GCP
+- Create a Cloud Logging sink and export logs to Pub/Sub
+- Deploy the Datadog Dataflow template to stream logs into Datadog
+- Datadog Log Collection from GCP
 
 ⸻
 
@@ -85,22 +85,19 @@ gcloud run deploy --set-env-vars or in your Dockerfile/CI.
 ⸻
 
 C. Validation in Datadog
-	•	Metrics & Logs: View under Infrastructure → Google Cloud Platform
-	•	APM Traces: View under APM → Services
-	•	Docs:
-	•	Serverless Init for Cloud Run
-	•	Tracing Node.js Applications
-	•	Cloud Run Integration Guide
-	•	GCP Integration Setup
+- Metrics & Logs: View under Infrastructure → Google Cloud Platform
+- APM Traces: View under APM → Services
+
+<Refer the docs in the start of the document please>
 
 ⸻
 
 Summary:
-	•	Enable GCP APIs and Datadog integration
-	•	Deploy using serverless-init sidecar for best results
-	•	Initialize dd-trace in app (or via NODE_OPTIONS)
-	•	Set Datadog environment variables
-	•	Validate in Datadog UI for metrics/logs/traces
+- Enable GCP APIs and Datadog integration
+- Deploy using serverless-init sidecar for best results
+- Initialize dd-trace in app (or via NODE_OPTIONS)
+- Set Datadog environment variables
+- Validate in Datadog UI for metrics/logs/traces
 
 ______
 
