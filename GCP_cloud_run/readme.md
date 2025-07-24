@@ -101,8 +101,6 @@ C. Validation in Datadog
 
 # Datadog Tracing for Google Cloud Run Functions (Gen 2, Java)
 
-This guide explains how to enable Datadog APM tracing for Java-based Google Cloud Run Functions (Gen 2) using the Datadog serverless-init sidecar and environment variables—no code changes required.
-
 ⸻
 
 Steps to Enable Datadog Tracing
